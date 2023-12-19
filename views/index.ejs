@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+            <div class="home-body flex flex-col text-center justify-center items-center space-y-6 mt-20 mb-10">
+                <div class="text-2xl text-center mb-5">CHOOSE WHAT YOU WANT TO READ</div>
+                <div class="flex space-x-10">
+                    <div class="flex flex-col text-2xl items-center">
+                        <h2 class="mx-20 text-3xl mb-16">Articles</h2>
+                        <div class="my-7"><button onclick="window.location.href='/random'" class="bg-transparent rounded-lg mt-4 py-2 px-12 border-2 border-slate-400">Random</button></div>
+                        <form action="/keyword" class="py-2 my-7" method="POST">
+                            <label for="keyword" >Seach by </label>
+                            <input type="text" name="keyword" class="bg-transparent border-2 border-slate-400 ml-10 text-center text-slate-400 placeholder:italic placeholder:text-slate-400 rounded-md py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500" placeholder="Keyword">
+                            <button type="submit" class="ml-4">Submit</button>
+                        </form>
+                        </div>
+
+                    <div class="flex flex-col text-2xl items-center space-y-2">
+                        <img src="images/sline.png" alt="" height="">
+                        <div class="flex justify-center items-center align-middle">
+                            <p>OR</p>
+                        </div>
+                        <img src="images/sline.png" alt="" height="">
+                    </div>
+
+                    <div class="flex flex-col text-2xl items-center">
+                        <h2 class="mx-20 text-3xl mb-16">Top-Headlines</h2>
+                        <div class="my-7"><button onclick="window.location.href='/source'" class="bg-transparent rounded-lg mt-4 py-2 px-12 border-2 border-slate-400">Sources(For News)</button></div>
+                        <form action="/country" class="py-2 my-7" method="POST">
+                            <label for="country">Seach by </label>
+                            <input type="text" name="country"
+                                class="bg-transparent border-2 border-slate-400 ml-10 text-center text-slate-400 placeholder:italic placeholder:text-slate-400 rounded-md py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500"
+                                placeholder="Country (ISO 3166-1)">
+                            <button type="submit" class="ml-4">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+<%- include("partials/footer.ejs") %>

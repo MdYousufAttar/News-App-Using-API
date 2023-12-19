@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+
+    <div class="flex flex-col text-center">
+        <h2 class="text-[#040507] my-5">Click on the card to visit the Source</h2>
+        <% for(let i=0; i<data.length; i++) { %>
+            <a href="<%= data[i].url %>" class="card flex flex-col border-2 border-solid border-[#2037FF] my-5">
+                <div class="name">
+                    <%= data[i].name %>
+                </div>
+                <div class="description">
+                    <%= data[i].description %>
+                </div>
+                <div class="country">Country: <%= data[i].country %>
+                </div>
+                <div class="language">Language: <%= data[i].language %>
+                </div>
+            </a>
+            <% } %>
+    </div>
+
+
+    <form action="/country" class="py-2 my-7 flex justify-center items-center" method="POST">
+        <label for="country">Seach by </label>
+        <input type="text" name="country"
+            class="bg-transparent border-2 border-slate-400 ml-10 text-center text-slate-400 placeholder:italic placeholder:text-slate-400 rounded-md py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500"
+            placeholder="Country (ISO 3166-1)">
+        <button type="submit" class="ml-4">Submit</button>
+    </form>
+
+
+    <%- include("partials/footer.ejs") %>

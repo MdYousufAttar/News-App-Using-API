@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+
+            <div class="article flex flex-col text-center justify-center items-center space-y-4 mt-6 mb-6">
+
+                <div class="title-author flex text-2xl">
+                    <h1><%= data.title %> ~ By <%= data.author %></h1>
+                </div>
+
+                <img class="" src="<%= data.urlToImage %>" alt="No Image" class="w-auto">
+
+                <p class=""><%= data.content %></p>
+                
+               <a class="url text-[#2037FF]" href="<%= data.url %>">Click here to read more: </a>
+
+                <div class="flex items-center space-x-8">
+                    <div class="my-3"><button onclick="window.location.href='/random'" class=" bg-transparent rounded-lg py-2 px-12 border-2 border-slate-400">Random</button></div>
+                    <p>Or</p>
+                    <form action="/keyword" class="py-2 my-3" method="POST">
+                        <label for="keyword" >Seach by </label>
+                        <input type="text" name="keyword" class="bg-transparent border-2 border-slate-400 ml-10 text-center text-slate-400 placeholder:italic placeholder:text-slate-400 rounded-md py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500" placeholder="Keyword">
+                        <button type="submit" class="ml-4">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+
+<%- include("partials/footer.ejs") %>
